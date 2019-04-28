@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0, shrink-to-fit=0">
+    <meta name="theme-color" content="#f4d442">
+    <meta name="apple-mobile-web-app-title" content="shorrock.blog">
+    <meta name="description" content="The evidence has never clearly shown that higher interest rates reduce inflation. Recent evidence points to the exact opposite.">
+
+    
+    <title>What if higher interest rates actually increase inflation? | shorrock.blog</title>
+    
+    <link rel="icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+<script src="/js/chartist.min.js"></script>
+<link rel="stylesheet" href="/css/chartist.min.css">
+
+
+
+    <script src="/datasets/CPIAUCSL.js"></script>
+
+    <script src="/datasets/FEDFUNDS.js"></script>
+
+
+
+  
+
+  </head>
+</html>
+<body>
+  <header>
+  <div class="container">
+    <a href="/">
+      <span class="logo">
+        T<strong>S</strong>
+      </span>
+      shorrock.blog
+    </a>
+  </div>
+</header>
+
+  <div class="container">
+  <article class="full-post">
+    <h1>What if higher interest rates actually increase inflation?</h1>
+    <p>If you’re like me, you’ll have looked at the decisions taken by central banks since the financial crisis and wonder how the ultra-low interest rates and QE never caused high inflation. In this post I’m going to take a deep dive into the relationship between monetary policy and inflation, and see if there is any opportunity for a contrarion take that results in profit in the markets.</p>
+<p>Lets start with a look at the theory:<br><blockquote><p>In general, as interest rates are reduced, more people are able to borrow more money. The result is that consumers have more money to spend, causing the economy to grow and inflation to increase. The opposite holds true for rising interest rates.</p>
+<footer><strong>Investopedia</strong><cite><a href="https://www.investopedia.com/ask/answers/12/inflation-interest-rate-relationship.asp" target="_blank" rel="noopener">Relationship between interest rates and inflation</a></cite></footer></blockquote></p>
+<h2 id="The-history"><a href="#The-history" class="headerlink" title="The history"></a>The history</h2><p>Let’s start with a simple chart showing the relationship between the rate of inflation (CPI, change from 1 year ago) and the interest rate (Fed funds upper target rate):<br>
+
+<div class="graph">
+  <h3>CPI YoY / Federal Funds Rate</h3>
+  <div id="inflation-v-rates-history" class="ct-golden-section"></div>
+  <footer>
+    <cite>
+      <strong>FRED</strong>
+      <a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">
+        CPIAUCSL
+      </a> /
+      <a href>
+        name
+      </a>
+    </cite>
+  </footer>
+</div>
+<script>
+window.cpiyoy = window.CPIAUCSL.reduce((arr, row, i, src) => {
+  const prevKey = i - 12;
+  if(prevKey < 0) return arr;
+  if(row.x < window.FEDFUNDS[0].x) return arr;
+
+  const prev = src[prevKey];
+  const diff = row.y - prev.y;
+  const change = (diff / prev.y) * 100;
+
+  arr.push({
+    x: row.x,
+    y: change
+  });
+
+  return arr;
+}, []);
+
+new Chartist.Line('#inflation-v-rates-history', {
+  series: [
+    {
+      name: 'CPI YoY',
+      data: window.cpiyoy,
+    },
+    {
+      name: 'Federal Funds Rate',
+      data: window.FEDFUNDS
+    }
+  ]
+}, {
+  showPoint: false,
+  axisX:{
+    type: Chartist.FixedScaleAxis,
+    divisor: 10,
+    labelInterpolationFnc(value){
+      return 1900 + new Date(value).getYear();
+    }
+  }
+});
+</script>
+
+</p>
+
+  </article>
+</div>
+
+
+</body>
+</html>
