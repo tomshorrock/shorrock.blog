@@ -106,7 +106,9 @@ section {
 }
 
 body {
+  background: #eee;
   line-height: 1;
+  padding-bottom: 3em;
 }
 ol,
 ul {
@@ -163,6 +165,7 @@ ol {
   width: 60rem;
   max-width: 94%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 header {
@@ -186,7 +189,8 @@ h2 {
   font-family: 'Headland One', serif;
   font-size: 1.5rem;
 }
-p {
+p,
+li {
   font-size: 1.2rem;
 }
 strong {
@@ -220,7 +224,7 @@ article {
 }
 
 blockquote {
-  background: #eee;
+  background: white;
   border-left: 10px solid #f4d442;
   padding: 1rem;
 }
@@ -240,18 +244,153 @@ blockquote cite:before {
 }
 
 .graph {
-  background: #fff;
   padding: 0.5rem;
-  border: 1px solid #ddd;
   margin: 1rem 0 0 0;
+}
+.graph-container {
+  background: #fff;
 }
 .graph h3 {
   margin: 0;
   color: #444;
+  background: #fff;
+  text-align: center;
+  display: inline-block;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.legend {
+  margin: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+.legend li {
+  background: #fff;
+  list-style: none;
+  float: left;
+  margin-right: 0.2rem;
+  padding: 0.4rem;
+}
+.legend li:before {
+  content: '';
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.4rem;
+  display: inline-block;
+}
+.graph .ct-series-a .ct-area {
+  fill: #f1405b;
+}
+.graph .ct-series-b .ct-area {
+  fill: #419ff2;
 }
 .graph .ct-series-a .ct-line {
   stroke: #f1405b;
 }
 .graph .ct-series-b .ct-line {
   stroke: #419ff2;
+}
+.graph .ct-series-c .ct-line {
+  stroke: #34d15b;
+}
+.graph .ct-series-d .ct-line {
+  stroke: #f47a42;
+}
+.graph .ct-series-e .ct-line {
+  stroke: #cc33a8;
+}
+.legend li:nth-child(1):before {
+  background: #f1405b;
+}
+.legend li:nth-child(2):before {
+  background: #419ff2;
+}
+.legend li:nth-child(3):before {
+  background: #34d15b;
+}
+.legend li:nth-child(4):before {
+  background: #f47a42;
+}
+.legend li:nth-child(5):before {
+  background: #cc33a8;
+}
+.container .ct-label.ct-horizontal.ct-end {
+  transform: translate(-50%, 0);
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+.graph cite:before {
+  content: 'Source: ';
+}
+.graph cite {
+  background: #fff;
+  float: right;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+}
+.graph .ct-point {
+  stroke-width: 8px;
+}
+li {
+  list-style: outside;
+  margin: 0.6rem 0 0 1.6rem;
+}
+figure {
+  max-width: 100%;
+}
+.push-right {
+  float: right;
+  margin: 1rem 0 0 1rem;
+}
+.bordered {
+  border: 1px solid #ccc;
+}
+figure {
+  position: relative;
+  text-align: center;
+  max-width: 90%;
+  overflow: hidden;
+}
+figure img {
+  max-width: 100%;
+}
+figcaption {
+  text-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+}
+
+table {
+  background: white;
+  margin: 1rem 0 0 0;
+}
+th,
+td {
+  text-align: center;
+  padding: 0.5rem;
+}
+th {
+  font-weight: bold;
+  background: #f4d442;
+}
+
+@media (max-width: 768px) {
+  .graph cite {
+    display: none;
+  }
+  .graph .ct-point {
+    stroke-width: 3px;
+  }
+  .push-right {
+    float: none;
+    margin: 1rem auto 0 auto;
+  }
 }
