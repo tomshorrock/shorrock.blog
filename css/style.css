@@ -371,15 +371,39 @@ figcaption {
 table {
   background: white;
   margin: 1rem 0 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 th,
 td {
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 th {
   font-weight: bold;
-  background: #f4d442;
+  padding: 1rem;
+}
+tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+tr.lay,
+.table-legend .lay {
+  background: rgba(234, 63, 199, 0.1);
+  border-left: 3px solid rgb(234, 63, 199);
+}
+tr.back,
+.table-legend .back {
+  background: rgba(63, 128, 234, 0.1);
+  border-left: 3px solid rgb(63, 128, 234);
+}
+.table-legend {
+  margin: 1rem 0 0 0;
+  overflow: hidden;
+}
+.table-legend li {
+  float: left;
+  list-style: none;
+  margin: 0 1rem 0 0;
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
