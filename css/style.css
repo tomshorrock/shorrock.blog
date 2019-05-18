@@ -158,7 +158,7 @@ p,
 ul,
 blockquote,
 ol {
-  margin: 1.2rem 0 0 0;
+  margin: 1.5rem 0 0 0;
   line-height: 1.3;
 }
 .container {
@@ -337,8 +337,8 @@ li {
   list-style: outside;
   margin: 0.6rem 0 0 1.6rem;
 }
-figure {
-  max-width: 100%;
+ol li {
+  list-style: decimal;
 }
 .push-right {
   float: right;
@@ -348,24 +348,26 @@ figure {
   border: 1px solid #ccc;
 }
 figure {
-  position: relative;
   text-align: center;
   max-width: 90%;
   overflow: hidden;
+  margin: 1.5rem 0 0 0;
 }
 figure img {
   max-width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+figure p {
+  margin: 0;
 }
 figcaption {
-  text-align: left;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  box-sizing: border-box;
-  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: inline-block;
   padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.9);
-  font-size: 0.8rem;
+  clear: both;
 }
 
 table {
