@@ -487,6 +487,13 @@ tr.back,
 .total td {
   font-weight: bold;
 }
+.pnl {
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  background: white;
+  padding: 0.5rem;
+}
 @media (max-width: 768px) {
   .graph cite {
     display: none;
@@ -504,5 +511,10 @@ tr.back,
   }
   td {
     padding: 0.5rem;
+  }
+  .pnl {
+    position: static;
+    margin: 1rem 1rem 0 0;
+    float: right;
   }
 }
