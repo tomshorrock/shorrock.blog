@@ -189,6 +189,30 @@ h2 {
   font-family: 'Headland One', serif;
   font-size: 1.5rem;
 }
+h3 {
+  font-family: 'Headland One', serif;
+  font-size: 1.3rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.3);
+  padding-top: 2rem;
+  font-weight: bold;
+}
+h4 {
+  font-family: 'Headland One', serif;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+h5 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: bold;
+  display: inline-block;
+  background: #fff;
+  clear: both;
+  padding: 0.5rem;
+  color: #888;
+}
 p,
 li {
   font-size: 1.2rem;
@@ -256,6 +280,7 @@ blockquote cite:before {
   background: #fff;
   text-align: center;
   display: inline-block;
+  border: none;
   padding: 0.4rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -408,6 +433,60 @@ tr.back,
   padding: 0.5rem;
 }
 
+.bet {
+  display: inline-block;
+  max-width: 100%;
+  margin: 1rem 1rem 0 0;
+}
+.bet > div {
+  padding: 1rem;
+  background: white;
+  overflow: hidden;
+}
+.bet .size,
+.bet .price {
+  float: left;
+  width: 50%;
+  padding: 0 0.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+.bet .size strong,
+.bet .price strong {
+  display: block;
+}
+.back .bet-selection strong {
+  color: rgb(63, 128, 234);
+}
+.lay .bet-selection strong {
+  color: rgb(234, 63, 199);
+}
+.market-summary {
+  margin: 1rem 2rem 0 0;
+  display: inline-block;
+}
+.market-summary div {
+  background: #fff;
+  padding: 1rem;
+}
+.market-summary table td {
+  text-align: left;
+}
+.loss {
+  color: #a82828;
+}
+.win {
+  color: #28a846;
+}
+.subtotal {
+  border-left: 3px solid rgba(0, 0, 0, 0.4);
+}
+.total {
+  border-left: 3px solid rgba(0, 0, 0, 0.8);
+}
+.total td {
+  font-weight: bold;
+}
 @media (max-width: 768px) {
   .graph cite {
     display: none;
@@ -418,5 +497,12 @@ tr.back,
   .push-right {
     float: none;
     margin: 1rem auto 0 auto;
+  }
+  .market-summary {
+    margin-right: 0;
+    max-width: 100%;
+  }
+  td {
+    padding: 0.5rem;
   }
 }
