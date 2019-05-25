@@ -518,3 +518,15 @@ tr.back,
     float: right;
   }
 }
+h2 span {
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0.2rem 0.4rem;
+}
+h2 span.win {
+  color: #fff;
+  background: #28a846;
+}
+h2 span.loss {
+  color: #fff;
+  background: #a82828;
+}
